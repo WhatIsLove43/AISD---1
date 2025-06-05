@@ -13,15 +13,14 @@ while True:
         for line in file:
             Numbers = line.split()
             for Number in Numbers:
-                if Number:
-                    if all(Symbol.upper() in AllowedSymbols for Symbol in Number) and (len(Number) > K):
-                        Number = int(Number, 16)
-                        if (Number % 2 == 0) and (Number <= 2048):
-                            ReadNumbers.append(Number)
-                            if len(ReadNumbers) == BlockSize:
-                                print(ReadNumbers)
-                                NumberSum += len(ReadNumbers)
-                                ReadNumbers = []
+                if all(Symbol.upper() in AllowedSymbols for Symbol in Number) and (len(Number) > K):
+                    Number = int(Number, 16)
+                    if (Number % 2 == 0) and (Number <= 2048):
+                        ReadNumbers.append(Number)
+                        if len(ReadNumbers) == BlockSize:
+                            print(ReadNumbers)
+                            NumberSum += len(ReadNumbers)
+                            ReadNumbers = []
 
     if ReadNumbers:
         print(ReadNumbers)
