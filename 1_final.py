@@ -23,21 +23,21 @@ while True:
                                 NumberSum += len(ReadNumbers)
                                 ReadNumbers = []
 
-if ReadNumbers:
-    print(ReadNumbers)
-    NumberSum += len(ReadNumbers)
+    if ReadNumbers:
+        print(ReadNumbers)
+        NumberSum += len(ReadNumbers)
 
-    CurrentMax = max(ReadNumbers)
-    if CurrentMax > NumberMax:
-        NumberMax = CurrentMax
+        CurrentMax = max(ReadNumbers)
+        if CurrentMax > NumberMax:
+            NumberMax = CurrentMax
 
-words = []
-NumberMaxStr = str(NumberMax)
-for i in NumberMaxStr:
-    words.append(NumberDict[i])
+    words = []
+    NumberMaxStr = str(NumberMax)
+    for i in NumberMaxStr:
+        words.append(NumberDict[i])
 
-print("Количество чисел: ", NumberSum)
-print("Максимальное число: \n", NumberMax)
-print(' '.join(words))
+    print("Количество чисел: ", NumberSum)
+    print("Максимальное число: \n", NumberMax)
+    print(' '.join(words))
 
 
